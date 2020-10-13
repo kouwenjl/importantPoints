@@ -1,0 +1,98 @@
+1.默认内存：
+  一类机器被称为服务器类机器被定义为以下机器:
+  2个或更多物理处理器
+  2 GB或更多的物理内存
+  在服务器类机器上，默认选择以下选项:
+  吞吐量垃圾收集器
+  初始堆大小为物理内存的1/64，最多1 GB
+  最大堆大小为物理内存的1/4，最多1 GB
+
+
+2.指定日志输出位置
+  
+  -Xloggc:gc.log
+
+3.打印垃圾收集详细信息
+  -verbose:gc导致在每次收集时打印有关堆和垃圾收集的信息，是一种综合信息 不区分代 并且内存可用量只包含一个幸存区域的大小
+  [GC (Allocation Failure)  7051K->6856K(9216K), 0.0040522 secs]
+  [GC (Allocation Failure) -- 7880K->7880K(9216K), 0.0170089 secs]
+  [Full GC (Ergonomics)  7880K->7779K(9216K), 0.0162592 secs]
+  [GC (Allocation Failure) -- 7779K->7779K(9216K), 0.0035438 secs]
+  [Full GC (Allocation Failure)  7779K->7779K(9216K), 0.0100603 secs]
+  Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+        at dxs.collection.AttributeList.main(AttributeList.java:17)
+
+
+  -XX:+PrintGCDetails会导致打印关于集合的附加信息 单独提出了新生代信息
+
+  [GC (Allocation Failure) [PSYoungGen: 907K->504K(2048K)] 7051K->6808K(9216K), 0.0046139 secs] [Times: user=0.00 sys=0.00, real=0.01 secs]
+  [GC (Allocation Failure) --[PSYoungGen: 1528K->1528K(2048K)] 7832K->7872K(9216K), 0.0071760 secs] [Times: user=0.00 sys=0.00, real=0.01 secs]
+  [Full GC (Ergonomics) [PSYoungGen: 1528K->1472K(2048K)] [ParOldGen: 6344K->6306K(7168K)] 7872K->7779K(9216K), [Metaspace: 2635K->2635K(1056768K)], 0.0127456 secs] [Times: user=0.05 sys=0.00, real=0.01 secs]
+  [GC (Allocation Failure) --[PSYoungGen: 1472K->1472K(2048K)] 7779K->7787K(9216K), 0.0032685 secs] [Times: user=0.00 sys=0.00, real=0.00 secs]
+  [Full GC (Allocation Failure) [PSYoungGen: 1472K->1472K(2048K)] [ParOldGen: 6314K->6306K(7168K)] 7787K->7779K(9216K), [Metaspace: 2635K->2635K(1056768K)], 0.0138369 secs] [Times: user=0.01 sys=0.00, real=0.01 secs]
+  Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+        at dxs.collection.AttributeList.main(AttributeList.java:17)
+  Heap
+   PSYoungGen      total 2048K, used 1518K [0x00000000ffd00000, 0x00000000fff80000, 0x0000000100000000)
+    eden space 1536K, 98% used [0x00000000ffd00000,0x00000000ffe7ba60,0x00000000ffe80000)
+    from space 512K, 0% used [0x00000000ffe80000,0x00000000ffe80000,0x00000000fff00000)
+    to   space 512K, 0% used [0x00000000fff00000,0x00000000fff00000,0x00000000fff80000)
+  ParOldGen       total 7168K, used 6306K [0x00000000ff600000, 0x00000000ffd00000, 0x00000000ffd00000)
+    object space 7168K, 87% used [0x00000000ff600000,0x00000000ffc28ba0,0x00000000ffd00000)
+  Metaspace       used 2666K, capacity 4486K, committed 4864K, reserved 1056768K
+    class space    used 283K, capacity 386K, committed 512K, reserved 1048576K
+
+ -XX:+PrintGCTimeStamps 在每个集合的开始处添加一个时间戳
+  Java HotSpot(TM) 64-Bit Server VM (25.251-b08) for windows-amd64 JRE (1.8.0_251-b08), built on Mar 12 2020 06:31:49 by "" with MS VC++ 10.0 (VS2010)
+  Memory: 4k page, physical 8247820k(2128600k free), swap 16493740k(8051468k free)
+  CommandLine flags: -XX:InitialHeapSize=8388608 -XX:MaxHeapSize=10485760 -XX:+PrintGC -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:-UseLargePagesIndividualAllocation -XX:+UseParallelGC 
+  35.124: [GC (Allocation Failure)  7051K->6792K(9216K), 0.0021425 secs]
+  40.126: [GC (Allocation Failure) -- 7816K->7848K(9216K), 0.0019433 secs]
+  40.128: [Full GC (Ergonomics)  7848K->7779K(9216K), 0.0101982 secs]
+  40.138: [GC (Allocation Failure) -- 7779K->7803K(9216K), 0.0016668 secs]
+  40.140: [Full GC (Allocation Failure)  7803K->7779K(9216K), 0.0106662 secs]
+
+4.代大小
+ -Xms 初始堆
+ -Xmx 最大堆
+ -XX:NewRatio 年轻代与年老代的比率
+ -XX:MinHeapFreeRatio  堆的最小空闲比率
+ -XX:MaxHeapFreeRatio  堆的最大空闲比率
+ -XX:+PrintTenuringDistribution 显示年轻代的对象在经历了多少次的收集后可以转为年老代
+ -XX:NewSize 新生代大小 优先于比例
+ -XX:MaxNewSize 最大的新生代大小
+ -XX:SurvivorRatio 幸存区域比例大小
+
+5 .启用垃圾收集器
+  -XX:+UseSerialGC 启用串行的垃圾收集器
+  -XX:+UseParallelGC 启用并行的垃圾收集器 可以进行并行压缩 处理器核数 大于8 则默认为5/8 个并行线程 等于核数
+      -XX:ParallelGCThreads 指定并行垃圾收集线程数量
+      由于多个垃圾收集器线程参与了一次小的收集，因此在收集期间从年轻代提升到成熟代可能会产生一些碎片。
+      小收集中涉及的每个垃圾收集线程都会为升级保留一部分保留期生成，而将可用空间划分为这些“升级缓冲区”可能会导致碎片效应。
+      减少垃圾收集器线程的数量和增加年老代的大小将减少这种碎片效应。
+      -XX:MaxGCPauseMillis 最大暂停时间
+      如果指定了暂停时间目标，则将调整堆大小和与垃圾收集相关的其他参数，
+      试图使垃圾收集暂停时间小于指定的值。这些调整可能会导致垃圾收集器降低应用程序的总体吞吐量，并不能总是满足所需的暂停时间目标。
+      -XX:GCTimeRatio 吞吐量 执行垃圾收集与应用程序执行时间的比值
+     注意：收集器有一个隐式的目标，即在满足其他目标的情况下最小化堆的大小。
+         优先考虑的目标
+         这些目标的实现顺序如下:
+         最大暂停时间目标
+         吞吐量目标
+         最小排放目标
+         首先达到最大暂停时间目标。只有在满足这个要求之后，才能实现吞吐量目标。类似地，只有在前两个目标得到满足之后才会考虑内存占用目标。
+      -XX:YoungGenerationSizeIncrement =X年轻代增量百分比
+      -XX:TenuredGenerationSizeIncrement =X年老代增量百分比
+      -XX:AdaptiveSizeDecrementScaleFactor=D缩量因子
+      注意:如果增长的增量是X %，那么收缩的递减量是X/D %。 默认增量20%，缩量为5%
+          如果收集器决定在启动时增加代，则会在增量中添加一个补充百分比。这种补充随收集次数的增加而减少，没有长期效果。这个补充的目的是提高启动性能。对于萎缩的百分比没有补充。
+          如果最大暂停时间目标没有被满足，那么每次只缩小一个代的大小。如果两代的暂停时间都高于目标，那么暂停时间较大的代的大小首先会缩小。
+          如果吞吐量目标没有被满足，两个代的大小都会增加。它们各自占总垃圾收集时间的比例增加。例如，如果年轻代的垃圾收集时间是总收集时间的25%，如果年轻代的全部增量是20%，那么年轻代将增加5%。
+  -XX:-UseParallelOldGC 关闭并行压缩
+  -XX:+UseConcMarkSweepGC cms并发收集
+  -XX:+UseG1GC G1并发收集器
+
+6.
+
+-XX:-UseAdaptiveSizePolicy
+-XX:+UseAdaptiveSizePolicy 自适应策略 将使-XX:SurvivorRatio  无效
