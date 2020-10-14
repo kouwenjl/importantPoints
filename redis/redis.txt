@@ -1,4 +1,4 @@
-
+http://www.redis.cn/download.html
 便捷安装 wget http://download.redis.io/releases/redis-6.0.6.tar.gz
 tar xzf redis-6.0.6.tar.gz
 make
