@@ -1,0 +1,24 @@
+文件相关:
+  mkdir adc
+  tar xzf redis-6.0.6.tar.gz
+  chmod 777  abc
+  cp -r /usr/local/bin/.  /usr/bin
+插件相关:
+ yum install wget
+ yumm install gcc
+ rpm -qa        /  yum list installed      # 查看所有安装的软件包
+
+
+
+
+
+
+
+
+
+虚拟机密码 root dxs123dxs
+centos7 若桥接模式无网：
+切入到 /etc/sysconfig/network-scripts目录 选择网卡文件
+将onboot改为yes 系统启动时自动启动网卡
+curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+hostnamectl set-hostname newname

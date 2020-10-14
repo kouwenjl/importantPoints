@@ -1,0 +1,26 @@
+
+便捷安装 wget http://download.redis.io/releases/redis-6.0.6.tar.gz
+tar xzf redis-6.0.6.tar.gz
+make
+
+
+
+make时报如下错误：
+      zmalloc.h:50:31: error: jemalloc/jemalloc.h: No such file or directory
+      zmalloc.h:55:2: error: #error "Newer version of jemalloc required"
+      make[1]: *** [adlist.o] Error 1
+      make[1]: Leaving directory `/data0/src/redis-2.6.2/src'
+      make: *** [all] Error 2
+      原因是jemalloc重载了Linux下的ANSI C的malloc和free函数。解决办法：make时添加参数。
+      make MALLOC=libc
+如果大家在centos7下编译redis6.0版本，如果出现以下错误
+     In file included from server.c:30:0:
+     server.h:1022:5: error: expected specifier-qualifier-list before ‘_Atomic’
+     _Atomic unsigned int lruclock; /* Clock for LRU eviction */
+     请先检查gcc的版本是否低于5，如果是请先升级，可以使用以下命令：
+     sudo yum install centos-release-scl
+     sudo yum install devtoolset-7-gcc*
+     scl enable devtoolset-7 bash
+
+bash: redis-server: command not found
+  需要把命令文件考到 用户空间下 /usr/bin
