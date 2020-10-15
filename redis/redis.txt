@@ -3,8 +3,6 @@ http://www.redis.cn/download.html
 tar xzf redis-6.0.6.tar.gz
 make
 
-
-
 make时报如下错误：
       zmalloc.h:50:31: error: jemalloc/jemalloc.h: No such file or directory
       zmalloc.h:55:2: error: #error "Newer version of jemalloc required"
@@ -24,3 +22,10 @@ make时报如下错误：
 
 bash: redis-server: command not found
   需要把命令文件考到 用户空间下 /usr/bin
+
+报文格式:resp        set a b
+ *总命令个数         *3
+ $命令长度           $1
+ 命令         ----》 a
+ $命令长度           $1
+  命令              b
