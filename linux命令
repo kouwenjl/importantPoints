@@ -7,7 +7,7 @@
  yum install wget
  yumm install gcc
  rpm -qa        /  yum list installed      # 查看所有安装的软件包
-
+ yum install net-tools --netstat -nultp
 
 
 

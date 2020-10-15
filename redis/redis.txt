@@ -29,3 +29,7 @@ bash: redis-server: command not found
  命令         ----》 a
  $命令长度           $1
   命令              b
+
+
+默认端口号 6379
+cli:-h 127.0.0.1-p 6379
