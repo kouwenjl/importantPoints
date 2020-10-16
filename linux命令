@@ -10,12 +10,18 @@
  yum install net-tools --netstat -nultp
 
 
+系统相关:
+   cat /proc/cpuinfo 查看cpu信息
+   cat /proc/meminfo 查看没存情况
+   df -h 查看分区使用情况
+   du -sh * 查看当前文件夹下 各文件的磁盘使用情况
 
 
-
-
-
-
+java 堆查看:
+   jmap -heap 5121 根据java 进程 查看各代内存大小及使用情况
+   jstat -gcutil 5121 各代内存使用率及垃圾回收统计
+   jmap -histo 5121 查看所有对象
+   jstack 5121 查看堆栈
 虚拟机密码 root dxs123dxs
 centos7 若桥接模式无网：
 切入到 /etc/sysconfig/network-scripts目录 选择网卡文件

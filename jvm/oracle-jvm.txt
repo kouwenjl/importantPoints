@@ -205,3 +205,6 @@
 -XX:-UseGCOverheadLimit
  如果太多时间花在垃圾收集(GC)上，并行收集器会抛出OutOfMemoryError:如果超过98%的时间花在垃圾收集上，而只有不到2%的堆被恢复，那么就会抛出OutOfMemoryError。该特性旨在防止由于堆太小而导致应用程序运行较长时间而几乎没有进展。如果有必要，可以通过在命令行中添加选项-XX:-UseGCOverheadLimit来禁用此功能。
  测量
+
+ -XX:+HeapDumpOnOutOfMemoryError，从字面就可以很容易的理解，在发生OutOfMemoryError异常时，进行堆的Dump，这样就可以获取异常时的内存快照了。
+ -XX:HeapDumpPath=D:\heap-dump\ ，这个也很好理解，就是配置HeapDump的路径，方便我们管理，这里我们配置为D:\heap-dump，当然你也可以根据自己的需要，定义为其他的目录。
