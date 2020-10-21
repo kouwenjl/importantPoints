@@ -10,6 +10,12 @@
         <option value="$PROJECT_DIR$/redis/pom.xml" />
         <option value="$PROJECT_DIR$/communication/pom.xml" />
         <option value="$PROJECT_DIR$/dubbo/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbimq/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloudclient/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloudserver/pom.xml" />
+        <option value="$PROJECT_DIR$/springclient2/pom.xml" />
+        <option value="$PROJECT_DIR$/jta/pom.xml" />
       </list>
     </option>
   </component>

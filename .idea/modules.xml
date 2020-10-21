@@ -6,7 +6,12 @@
       <module fileurl="file://$PROJECT_DIR$/redis/demo.iml" filepath="$PROJECT_DIR$/redis/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo/dubbo.iml" filepath="$PROJECT_DIR$/dubbo/dubbo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/importantPoints.iml" filepath="$PROJECT_DIR$/.idea/importantPoints.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jta/jta.iml" filepath="$PROJECT_DIR$/jta/jta.iml" />
       <module fileurl="file://$PROJECT_DIR$/jvm/jvm.iml" filepath="$PROJECT_DIR$/jvm/jvm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbimq/rabbimq.iml" filepath="$PROJECT_DIR$/rabbimq/rabbimq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springclient2/springclient2.iml" filepath="$PROJECT_DIR$/springclient2/springclient2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloudserver/springcloud.iml" filepath="$PROJECT_DIR$/springcloudserver/springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloudclient/springcloudclient.iml" filepath="$PROJECT_DIR$/springcloudclient/springcloudclient.iml" />
     </modules>
   </component>
 </project>

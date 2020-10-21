@@ -40,6 +40,8 @@ public class DemoApplication {
        HashOperations hash= redisTemplate.opsForHash();
        ListOperations list=redisTemplate.opsForList();
        SetOperations  set=redisTemplate.opsForSet();
+       ZSetOperations zset=redisTemplate.opsForZSet();
+
 
     }
 }

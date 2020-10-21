@@ -33,3 +33,12 @@ bash: redis-server: command not found
 
 默认端口号 6379
 cli:-h 127.0.0.1-p 6379
+
+安装 ruby yum install ruby
+集群：
+./redis-trib.rb create --replicas 1 127.0.0.1:7000 127.0.0.1:7001 \
+127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005
+重新分片
+/redis-trib.rb reshard 127.0.0.1:7000
+添加节点
+./redis-trib.rb add-node 127.0.0.1:7006 127.0.0.1:7000   --cluster add-node 127.0.0.1:6381 127.0.0.1:6380

@@ -7,24 +7,39 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="communication" />
-        <module name="jvm" />
-        <module name="dubbo" />
         <module name="demo" />
+        <module name="dubbo" />
+        <module name="jvm" />
+        <module name="rabbimq" />
+        <module name="springclient2" />
+        <module name="springcloud" />
+        <module name="jta" />
+        <module name="springcloudclient" />
+        <module name="communication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="communication" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="dubbo" target="1.8" />
+      <module name="jta" target="1.8" />
       <module name="jvm" target="1.8" />
+      <module name="rabbimq" target="1.8" />
       <module name="redis" target="1.5" />
+      <module name="springclient2" target="1.8" />
+      <module name="springcloud" target="1.8" />
+      <module name="springcloudclient" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="demo" options="-parameters" />
       <module name="dubbo" options="-parameters" />
+      <module name="jta" options="-parameters" />
+      <module name="rabbimq" options="-parameters" />
+      <module name="springclient2" options="-parameters" />
+      <module name="springcloud" options="-parameters" />
+      <module name="springcloudclient" options="-parameters" />
     </option>
   </component>
 </project>
