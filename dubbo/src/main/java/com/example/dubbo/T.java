@@ -10,10 +10,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class T {
     @Pointcut("execution(public * com.example.dubbo.ApoTestServecie.*(..))")
-    public void pointCut(){
+    public void pointCut() {
     }
+
     @Around("pointCut()")
-    public void f(){
+    public void f() {
         System.out.println("before");
     }
 }

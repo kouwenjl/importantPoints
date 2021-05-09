@@ -32,15 +32,17 @@ public class DemoApplication {
 //        System.out.println(JSONObject.toJSONString(jedisCluster.hgetAll("ZUGOU.GENERAL.SESSION.5407578c73d341a39209b2a85832d505")));
         SpringApplication.run(DemoApplication.class, args);
     }
+
     @Autowired
     StringRedisTemplate redisTemplate;
-   @PostConstruct
-    public void getTest(){
-       ValueOperations str=redisTemplate.opsForValue();
-       HashOperations hash= redisTemplate.opsForHash();
-       ListOperations list=redisTemplate.opsForList();
-       SetOperations  set=redisTemplate.opsForSet();
-       ZSetOperations zset=redisTemplate.opsForZSet();
+
+    @PostConstruct
+    public void getTest() {
+        ValueOperations str = redisTemplate.opsForValue();
+        HashOperations hash = redisTemplate.opsForHash();
+        ListOperations list = redisTemplate.opsForList();
+        SetOperations set = redisTemplate.opsForSet();
+        ZSetOperations zset = redisTemplate.opsForZSet();
 
 
     }

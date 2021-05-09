@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 public class JtaApplication {
     private String dxs;
+
     public static void main(String[] args) {
         SpringApplication.run(JtaApplication.class, args);
     }

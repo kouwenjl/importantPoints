@@ -5,10 +5,20 @@ eureka:
     appname: 8082Client
   client:
     service-url:
-      defaultZone: http://localhost:8080/eureka
+      defaultZone: http://192.168.1.101:10010/eureka
 zuul:
   routes:
-    users:
-      path: /get8081
-      serviceId: 8081Client-dxs
-      stripPrefix: true
+    #    8081Client-dxs: /user/**
+    ycmp-onlyoffice: /ycmp-onlyoffice/**
+#
+#
+#  host:
+#    connect-timeout-millis: 10000
+#    socket-timeout-millis: 10000
+#ribbon:
+#  ReadTimeout: 120000  #请求处理的超时时间
+#  ConnectTimeout: 30000  #请求连接的超时时间
+
+
+
+

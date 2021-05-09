@@ -15,10 +15,12 @@ public class RabbimqApplication {
     public static void main(String[] args) {
         SpringApplication.run(RabbimqApplication.class, args);
     }
-   @Autowired
+
+    @Autowired
     RabbitTemplate rabbitTemplate;
+
     @RabbitListener
-    public void ss(){
+    public void ss() {
 
 
     }

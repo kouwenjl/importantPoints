@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titlsse</title>
+</head>
+<body>
+<script>
+    sessionStorage.setItem("sx","ss");
+    var beginTime = 0;//执行onbeforeunload的开始时间
+    var differTime = 0;//时间差
+    window.onunload = function (e,l){
+        differTime = new Date().getTime() - beginTime;
+        if(differTime <= 5) {
+          console.log("gaungbi");
+          sessionStorage.removeItem("sx","ss");
+        }else{
+            console.log("浏览器刷新")
+            sessionStorage.setItem("sa","sssss");
+        }
+
+    }
+    window.onbeforeunload = function (e,l){
+        console.log(e);
+        console.log("ss");
+        beginTime = new Date().getTime();
+    };
+ function open() {
+     window.open("/d.html");
+
+ }
+</script>
+
+</html>

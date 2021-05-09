@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Component
 public class ApoTestServecie implements Serializable {
-    public void t(){
+    public void t() {
         System.out.println("aop");
     }
 }

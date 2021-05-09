@@ -1,7 +1,6 @@
 package com.example.springclient2;
 
 
-
 import feign.form.ContentType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -11,6 +10,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -23,9 +23,11 @@ public class Springclient2Application {
     }
 //    @Autowired
 //    TestFeign testFeign;
-//    @RequestMapping("/get8081")
-//    public String get8081(){
-//        return testFeign.get8081("8082请求");
+//    @RequestMapping("/get8082")
+//    @ResponseBody
+//    public String get8081() throws Exception{
+//        Thread.sleep(5000);
+//        return ("8082请求");
 //    }
 
 }
